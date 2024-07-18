@@ -4,7 +4,7 @@ import random
 screen = t.Screen()
 start_message = t.Turtle()
 is_playing = False
-finish_line = 330
+finish_line = 332
 winning_turtle = t.Turtle()
 winning_turtle.hideturtle()
 
