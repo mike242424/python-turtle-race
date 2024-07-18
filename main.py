@@ -2,16 +2,24 @@ import turtle as t
 import random
 
 screen = t.Screen()
-finish_line = 345
+finish_line = 335
 winning_turtle = t.Turtle()
+start_message = t.Turtle()
 winning_turtle.hideturtle()
 is_playing = True
 user_prediction = screen.textinput('Turtle Race', 'Who will win? (Blue/Red/Green/Orange/Purple/Pink/Black)').lower()
 
 
+def display_start_message():
+    start_message.hideturtle()
+    start_message.penup()
+    start_message.goto(0, 250)
+    start_message.write("Press SPACE to start the game", align="center", font=("Arial", 18, "bold"))
+
 def start_game():
     global winning_turtle
     global is_playing
+    start_message.clear()
     while is_playing:
         turtle_1.forward(random.randint(1, 30))
         if turtle_1.xcor() > finish_line:
@@ -62,6 +70,9 @@ def find_winner():
         print(f'You won! The {winning_turtle.pencolor()} turtle is the winner!')
     else:
         print(f'You lost! The {winning_turtle.pencolor()} turtle is the winner.')
+
+
+display_start_message()
 
 
 turtle_1 = t.Turtle()
