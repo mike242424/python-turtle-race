@@ -37,7 +37,7 @@ def start_game():
 
     while is_playing:
         for turtle in turtles:
-            turtle.forward(random.randint(0, 31))
+            turtle.forward(random.randint(0, 10))
             if turtle.xcor() > finish_line:
                 is_playing = False
                 winning_turtle = turtle
